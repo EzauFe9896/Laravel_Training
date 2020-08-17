@@ -1,0 +1,101 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Psy\CodeCleaner\FunctionReturnInWriteContextPass;
+
+class PostController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index($id)
+    {
+        //
+        return "Its workig ujuuuuu! The number is: ". $id;
+    }
+    }
+    
+//Ruta del ejemplo poscontroller     
+  <?php
+
+use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/post/{id}', 'PostController@index');
+
+
+/*Esto es ejemplo del video # 24*/
+<?php
+
+use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::resource('post', 'PostController');
+
+/*Esto es del postController*/
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Psy\CodeCleaner\FunctionReturnInWriteContextPass;
+
+class PostController extends Controller
+{
+ /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+        return "I am the method that creates stuff :-)";
+    }
+
+/**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+        return "This is the show method ujuuuuuuuu! : ". $id;
+    }
+}
