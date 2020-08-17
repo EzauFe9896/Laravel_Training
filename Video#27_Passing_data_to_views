@@ -1,0 +1,44 @@
+/*Esta es la vista post.blade.php*/
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>Laravel</title>
+
+    <link href="https://fonts.googlerapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+
+<h1>Post {{$id}} {{$name}} {{$password}}</h1>
+
+</div>
+</body>
+</html>
+
+/*Esto es la dirección de la ruta*/
+<?php
+
+use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('post/{id}/{name}/{password}', 'PostController@show_post');
+
+/*Esto es del PostController */
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Psy\CodeCleaner\FunctionReturnInWriteContextPass;
+
+class PostController extends Controller
+{
+public function show_post($id, $name, $password)
+{
+
+    return view ('/post', compact('id' , 'name', 'password'));
+}
+}
