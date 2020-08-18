@@ -1,0 +1,12 @@
+//Se crea la ruta invertir relación 
+Route::get('/post/{id}/user', function($id){
+
+    return Post::find($id)->user->name;
+ 
+ });
+ 
+//En the model post se crea la siguiente función
+ public function user(){
+
+        return $this->belongsTo('App\user');
+    }
