@@ -1,0 +1,18 @@
+ //1 a más relaciones
+Route::get('/posts', function(){
+
+    $user = User::find(1);
+
+    foreach($user->$posts as $post)
+    {
+       echo  $post->title."<br>";
+    };
+ 
+ });
+ 
+ //En model user se crea una función  
+ 
+ public function posts(){
+
+        return $this->hasMany('App\Post'); // obtine más relaciones
+    }
