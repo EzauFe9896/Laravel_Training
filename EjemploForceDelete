@@ -1,0 +1,6 @@
+
+Route::get('/forcedelete', function(){
+
+    Post::withTrashed()->where('is_admin',0)->forceDelete();
+
+});
