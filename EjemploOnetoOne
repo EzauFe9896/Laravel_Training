@@ -1,0 +1,29 @@
+// En el modelo User se agrega la siguiente función
+
+ public function post(){
+
+        return $this->hasOne('App\Post');
+    }
+    
+//En la tabla Migrate Pos se añaade la siguiente función
+
+
+    public function up()
+    {
+        Schema::create('post', function (Blueprint $table) {
+        
+            $table->increments('id'); // y se añaden los siguientes parametros
+            $table->integer('user_id')->unsigned();//Este también
+            $table->string('title');
+            $table->text('body'); 
+            $table->timestamps();
+        });
+    }
+    
+    //Se crea la siguiente ruta
+    
+    Route::get('/users/{id}/post', function($id){
+
+   return User::find($id)->post;
+
+});
