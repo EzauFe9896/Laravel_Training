@@ -1,0 +1,11 @@
+Route::get('/basicinsert', function(){
+
+    $post = new Post;
+
+$post->title='New Eloquent title insert';
+
+$post->cotent='WOW eloquent is really cool, look at this content';
+
+$post->save();
+
+});
