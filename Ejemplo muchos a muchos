@@ -1,0 +1,28 @@
+//Relacion muchos a muchos
+ Route::get('/post/{id}/role', function($id){
+
+    $user = User::find($id);
+
+    foreach ($user=$roles as $role){
+
+        return $role->name;
+    }
+ 
+ });
+// otra forma de muchos a muchos
+ Route::get('/post/{id}/role', function($id){
+
+    $user = User::find($id)->roles()->orderBy('id','desc')->get();
+
+    return $user;
+ });
+
+
+//Se crea la función role en el model user
+
+  public function role(){
+
+               
+        return $this->belongsToMany('App\Role');
+                    
+        }
