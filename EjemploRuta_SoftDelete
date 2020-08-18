@@ -1,0 +1,11 @@
+//Hay que crea datos para eliminarlos
+Route::get('/create', function(){
+
+    Post::create(['title'=>'The create method','content'=>'WOW I\'m learning a lot with Edwin Diaz']);
+
+});
+
+Route::get('/softdelete', function(){
+
+    Post::find(1)->delete();
+});
