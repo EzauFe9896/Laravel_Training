@@ -1,0 +1,26 @@
+//Esto va en rutas
+
+Route::get('/create', function(){
+
+    Post::create(['title'=>'The create method','content'=>'WOW I\'m learning a lot with Edwin Diaz']);
+    
+});
+
+//Esto va en el model Post
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
+{
+    // protected $table ='post';
+
+   // protected $primarykey = 'post_id';
+
+   protected $fillable=[
+       'title',
+       'content'
+    ];
+}
