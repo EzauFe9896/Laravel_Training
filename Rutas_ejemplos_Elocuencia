@@ -1,0 +1,22 @@
+use App\Post; //Hay que usar la libreria del modelo creado.
+
+Route::get('/find', function(){
+
+    $posts = Post::find(2);
+
+     return $posts->titlte;
+
+});
+
+//Se puede hacer de las dos maneras
+Route::get('/read', function(){
+
+    $posts = Post::all();
+
+    foreach ($posts as $post)
+    {
+
+        return $posts->titlte;
+    }
+
+});
