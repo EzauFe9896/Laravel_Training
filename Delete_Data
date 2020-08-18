@@ -1,0 +1,17 @@
+Route::get('/delete', function(){
+
+$post=Post::find(2);
+
+$post->delete();
+
+});
+
+//otra forma de hacerlo
+
+Route::get('/delete2', function(){
+
+$post=Post::destroy(3);// o en ves de 3 [4,5] dentro del destroy
+
+// o asi también Post::where('is_admin',0)->delete();
+
+});
