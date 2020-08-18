@@ -1,0 +1,5 @@
+Route::get('/update', function()
+{
+
+    Post::where('id',2)->where('is_admin',0)->update(['title'=>'NEW PHP TITLE','content'=>'The instructoe Edwin is awesome']);
+});
