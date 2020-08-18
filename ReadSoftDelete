@@ -1,0 +1,14 @@
+Route::get('/readsoftdelete', function(){
+
+    // $post = Post::find(1);
+
+    // return $post;
+
+    $post=Post::withoutTrashed()->where('is_admin',0)->get();
+
+    return $post;
+
+    // $post=Post::onlyTrashed()->where('is_admin',0)->get();
+
+    // return $post;
+});
