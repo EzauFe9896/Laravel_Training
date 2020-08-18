@@ -1,0 +1,5 @@
+Route::get('/readsoftdelete', function(){
+
+    $post=Post::withoutTrashed()->where('is_admin',0)->get();
+
+});
