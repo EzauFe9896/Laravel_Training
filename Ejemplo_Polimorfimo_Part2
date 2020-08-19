@@ -1,0 +1,41 @@
+//En el archivo rutas se crea las siguientes rutas
+//Relaciones Polimorficas
+ Route::get('/user/photos', function()
+ {
+
+    $user=User::find(1);
+    
+    foreach($user->photos as $photo)
+    {
+        return $photo;
+    }
+ });
+//otra forma de hacerlo
+ Route::get('/post/photos', function()
+ {
+
+    $post=Post::find(1);
+    
+    foreach($post->photos as $photo)
+    {
+        return $photo->path;
+
+        //o realizamos un echo
+        // $photo->path."<br>";
+    }
+ });
+ 
+//En model User y Model Post se crea la misma función 
+
+   public function photos(){
+
+        return $this->morphMany('App\Photo','imageable');
+    }
+  
+  //En model Photo se crea la siguiente función
+     public function imageable(){
+
+        return $this->morphTo();
+       }
+       
+    
