@@ -1,0 +1,9 @@
+//Se crea una ruta en el archivo de rutas
+//Relación Polimorfica Inversa
+ Route::get('/post/{id}/photo', function($id){
+
+    $photo=Photo::findOrFail($id);
+
+    return $photo->imageable_id;
+
+ });
