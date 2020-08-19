@@ -1,0 +1,12 @@
+//Relación Polimorfica muchos a muchos - retrieving owner
+//Se crea una ruta para econtrar la etiqueta(dueña)
+ Route::get('/post/tags', function(){
+
+    $post=Post::find(1);
+
+    foreach($post->tags as $tag){
+
+       echo  $tag->name;
+    }
+
+ });
