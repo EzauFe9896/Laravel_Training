@@ -1,0 +1,6 @@
+//En post model se crea la siguiente función 
+
+public function tags(){
+
+    return $this->morphToMany('App\Tag','taggable');
+}
