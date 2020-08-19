@@ -1,0 +1,13 @@
+ //Más de relaciones part & part2
+ 
+ //Se añade los paremtros a la función creada en más relaciones part 1
+ Route::get('/user/country', function()
+ {
+
+    $country=Country::find(1);
+    
+    foreach($country->post as $post)
+    {
+        return $post->title;
+    }
+ });
