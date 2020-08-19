@@ -1,0 +1,17 @@
+//Se crea una ruta en el archivo de rutas
+
+//Relación Polimorfica muchos a muchos
+ Route::get('/post/tags', function(){
+
+    $post=Post::find(1);
+
+    foreach($post->tags as $tag){
+
+       echo  $tag->name;
+    }
+
+ });
+ 
+ //Y en taggable table se corrige integer por string
+ 
+  $table->string('taggable_type');
