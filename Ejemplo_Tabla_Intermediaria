@@ -1,0 +1,32 @@
+ //En Role model se crea la siguiente función
+ 
+ public function users()
+{
+
+    return $this->belongsToMany('App\User');
+}
+
+//En rutas se crea la siguiente función
+ Route::get('/user/pivot', function(){
+
+    $user = User::find(1);
+    
+    foreach($user->roles as $role){
+
+        return $role->pivote->created_at;
+    }
+
+ });
+ 
+ //En User Model se añade el siguiente parametro withPivot
+ 
+    public function role(){
+
+               
+        return $this->belongsToMany('App\Role')->withPivot('created_at');
+
+//Para customizar los nombres de las tablas y columnas sigiiue el siguiente formato.
+
+        //return $this->belongsToMany('App\Role','user_roles','user_id,'role_id')
+                    
+        }
