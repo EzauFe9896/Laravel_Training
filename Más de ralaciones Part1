@@ -1,0 +1,6 @@
+//En rutas se crea la siguiente función
+//Más de relaciones
+ Route::get('/user/country', function()
+ {
+
+ });
