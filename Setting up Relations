@@ -1,0 +1,15 @@
+//En adress_table se añade un integer a la función up
+ public function up()
+    {
+        Schema::create('adresses', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->integer('user_id')->usigned()->nullable();
+            $table->timestamps();
+        });
+    }
+ //En model user en la función up se añade un integer
+ public function adress(){
+
+        return $this->hasOne('App\Adress');
+    }
