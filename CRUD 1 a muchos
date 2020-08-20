@@ -1,0 +1,44 @@
+//Creating data for user 1 a muchos
+Route::get('/create', function(){
+
+    $user=User::findOrFail(1);
+
+    $post=new Post(['title'=>'My first post with Edwin Diaz ','body'=>'Laravel is awesome']);
+
+    //Se puede realizar así también
+    //$user->posts()->save(new Post(['title'=>'My first post with Edwin Diaz ','body'=>'Laravel is awesome']));
+
+    });
+//Reading Data 1 a muchos
+Route::get('/read', function(){
+
+    $user=User::finOrFail(1);
+
+    foreach ($user->posts as $post){
+
+        echo $post-> title . "<br>";
+    }
+//Se puede utilizar esta instancia para ver colecciones o solo $user para
+//traer información del objeto
+//dd($user->posts); // Volcado
+
+});
+
+//updating data 1 a muchos
+Route::get('/update', function(){
+
+    $user=User::find(1);
+
+    $user->posts()->whereId(1)->update=(['title'=>'Lravel is Cool','body'=>'This is awesome, thank you Edwin']);
+
+$user->save();
+});
+//Deleting Data 1 a muchos
+Route::get('/delete', function(){
+
+    $user=User::findOrFail(1);
+
+    $user->post()->whereID(1)->delete();
+
+    return "done";
+});
