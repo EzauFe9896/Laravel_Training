@@ -1,0 +1,5 @@
+//En model User se crea la siguiente función    
+    public function posts(){
+
+        return $this->hasMany('App\Post');
+    }
