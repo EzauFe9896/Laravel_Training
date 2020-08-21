@@ -1,0 +1,13 @@
+ Función index del PostController
+ public function index()
+    {
+        //
+       return $posts = Post::latest();
+
+       $post=Post::orderBy('id','desc')->get();
+}
+//Funcion del Post MODEL
+public function scopeLatest($query){
+
+    return $query->orderBy('id','asc')->get();
+}
