@@ -1,0 +1,33 @@
+//Accesors obtiene el nombre del user
+Route::get('/dates', function(){
+
+    $date=new DateTime('+1 week');
+
+    echo $date->format('m-d-y');
+
+    echo '<br>';
+
+    // echo $date::now()->ddDays(10)->diffForHumans();
+    // echo '<br>';
+
+
+});
+//MUtators El nombre del user lo pone en mayuscula
+Route::get('/setname',function(){
+
+$user=User::find(1);
+$user->name="Ezau";
+$user->save();
+
+});
+
+   //Accersors
+    public function getNameAttributes($value){
+
+       return strtoupper($value);
+    }
+    //Mutators 
+    public function setNameAttribute($value){
+
+        $this->attributes['name'] =strtoupper($value);
+    }
