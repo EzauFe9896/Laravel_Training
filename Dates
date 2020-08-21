@@ -1,0 +1,13 @@
+Route::get('/dates', function(){
+
+    $date=new DateTime('+1 week');
+
+    echo $date->format('m-d-y');
+
+    echo '<br>';
+
+    echo $date::now()->ddDays(10)->diffForHumans();
+    echo '<br>';
+
+
+});
